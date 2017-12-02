@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据与方法</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app-8">
+    <p>初始值：{{ mydata.a }}</p>
+
+    <div>
+        <input id="myinput" type="text">
+        <button v-on:click="mod">修改vm值</button>
+    </div>
+</div>
+
+
+
+<script>
+
+    var data = { a: 1 };
+    //该对象被加入到一个Vue实例中
+    var vm = new Vue({
+        data: data
+    });
+
+    //他们引用相同的对象
+    var ret1 = (vm.a  === data.a);
+    console.log(ret1);
+
+
+
+    var app8 = new Vue({
+        el:"div",
+        data:{
+            mydata:data
+        },
+        methods:{
+            mod: function () {
+                var v_input = document.getElementById("myinput").value;
+                vm.a = v_input;
+            }
+        }
+    });
+
+    //设置属性也会影响到原始数据
+
+
+
+</script>
+</body>
+</html>

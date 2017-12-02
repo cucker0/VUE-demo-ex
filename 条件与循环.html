@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app-3" class="myclass">
+        <p v-if="seen">现在看到我了</p>
+    </div>
+
+    <div>0000</div>
+
+    <script>
+        var app3 = new Vue({
+            el:'div',
+            data:{
+                seen: true
+            }
+        })
+    </script>
+
+</body>
+</html>
